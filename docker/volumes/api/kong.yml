@@ -36,6 +36,7 @@ basicauth_credentials:
 services:
   ## Open Auth routes
   - name: auth-v1-open
+    _comment: "GoTrue: /auth/v1/verify* -> http://auth:9999/verify*"
     url: http://auth:9999/verify
     routes:
       - name: auth-v1-open
@@ -45,6 +46,7 @@ services:
     plugins:
       - name: cors
   - name: auth-v1-open-callback
+    _comment: "GoTrue: /auth/v1/callback* -> http://auth:9999/callback*"
     url: http://auth:9999/callback
     routes:
       - name: auth-v1-open-callback
@@ -54,6 +56,7 @@ services:
     plugins:
       - name: cors
   - name: auth-v1-open-authorize
+    _comment: "GoTrue: /auth/v1/authorize* -> http://auth:9999/authorize*"
     url: http://auth:9999/authorize
     routes:
       - name: auth-v1-open-authorize
